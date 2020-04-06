@@ -1,0 +1,4 @@
+#Build Options
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+RGDLIGHT_ENABLE = no
