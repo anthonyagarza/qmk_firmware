@@ -4,12 +4,14 @@ extern keymap_config_t keymap_config;
 
 #define _QWERTY 0
 #define _COLEMAK 1
-#define _RAISE 2
-#define _NAV 3
+#define _GAMER 2
+#define _RAISE 3
+#define _NAV 4
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
-  COLEMAK
+  COLEMAK,
+  GAMER
 };
 
 #define FNESC LT(_RAISE, KC_ESC)
@@ -49,7 +51,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
   FNESC,   KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                          KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN, FNQUOT,
   KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_PGDN,      KC_PPLS, KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,
   KC_LCTL, KC_LGUI,KC_LALT,                                                                       KC_LEFT,MISSION, KC_RIGHT,
-                                            GUITAB, KC_BSPC,      KC_SPC,  KC_ENT, 
+                                            GUITAB, KC_BSPC,      KC_SPC,  KC_ENT,
                                            KC_NO , KC_DEL,       KC_END,  KC_NO
     ),
 
@@ -84,6 +86,34 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 /*
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * | ESC    |   1  |   2  |   3  |   4  |   5  |  -   |           |  =   |   6  |   7  |   8  |   9  |   0  |  Bsp   |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * | Tab    |   Q  |   W  |   F  |   P  |   G  | PgUp |           |  [   |   J  |   L  |   U  |   Y  |   ;  |   \    |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * | Caps   |   A  |   R  |   S  |   T  |   D  |------|           |------|   H  |   N  |   E  |   I  |   O  | Enter  |
+ * |--------+------+------+------+------+------| PgDn |           |  ]   |------+------+------+------+------+--------|
+ * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   K  |   M  |   ,  |   .  |  /   |M2/Shift|
+ * `--------+------+------+---------------------------'           `---------------------------+------+------+--------'
+ *   | Ctrl |  Gui |  Alt |                                                                   | Left |  Down| Right |
+ *   `--------------------'                                                                   `--------------------'
+ *                                        ,-------------.       ,---------------.
+ *                                        |      |  Ins |       | Home |        |
+ *                                        | Space|------|       |------|M1/Space|
+ *                                        |      |  Del |       | End  |        |
+ *                                        `-------------'       `---------------'
+ */
+[_GAMER] = LAYOUT(
+  KC_GRV,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_CAPS,      LOCK,  KC_6,   KC_7,   KC_8,   KC_9,   KC_0,    KC_MINS,
+  KC_TAB,  KC_Q,   KC_W,   KC_F,   KC_P,   KC_G,   KC_EQL,       KC_PPLS, KC_J,   KC_L,   KC_U,   KC_Y,   KC_SCLN, KC_BSLS,
+  KC_CAPS,   KC_A,   KC_R,   KC_S,   KC_T,   KC_D,                          KC_H,   KC_N,   KC_E,   KC_I,   KC_O,    FNQUOT,
+  KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_PGDN,      KC_RBRC, KC_K,   KC_M,   KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,
+  KC_LCTL, KC_LGUI,KC_LALT,                                                                       KC_LEFT,MISSION, KC_RIGHT,
+                                           KC_SPC, KC_BSPC,      KC_SPC,  KC_ENT,
+                                           KC_NO , KC_DEL,       KC_END,  KC_NO
+    ),
+/*
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |   ~    |  F1  |  F2  |  F3  |  F4  |  F5  | F11  |           |  F12 |  F6  |  F7  |  F8  |  F9  | F10  |  Del   |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
@@ -100,12 +130,12 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
  *                                        |      |      |       |      |        |
  *                                        `-------------'       `---------------'
  */
-    [_RAISE] = LAYOUT(
+[_RAISE] = LAYOUT(
   KC_GRV,   KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F11,     KC_F12,  KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_DEL,
   _______,  KC_EXLM,  KC_AT,  KC_LCBR,  KC_RCBR,    KC_PIPE,  KC_VOLU,      KC_BRMU, _______,  KC_KP_7 ,KC_KP_8 ,KC_KP_9,  _______,  _______,
   _______,  KC_HASH,  KC_DLR,  KC_LPRN,  KC_RPRN,   KC_TILD,                         _______,  KC_KP_4 ,KC_KP_5 ,KC_KP_6 , KC_PPLS,  _______,
   _______,  KC_PERC,  KC_CIRC,  KC_LBRC,  KC_RBRC,  _______,  KC_VOLD,    KC_BRMD,   _______,  KC_KP_1 ,KC_KP_2 ,KC_KP_3 , KC_KP_0,  _______,
-  QWERTY,  COLEMAK,  _______,                                                                                   WKLEFT,   MISSION,  WKRIGHT,
+  QWERTY,  COLEMAK,  GAMER,                                                                                   WKLEFT,   MISSION,  WKRIGHT,
                                                     _______,  _______,    _______,  KC_KP_0,
                                                     _______,  _______,    _______,  _______
     ),
@@ -154,6 +184,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case COLEMAK:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case GAMER:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_GAMER);
       }
       return false;
       break;
