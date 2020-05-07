@@ -1,11 +1,14 @@
 # ergo101
 
-![ergo101](imgur.com image replace me!)
+![ergo101](https://imgur.com/oDviLc9)
 
-A short description of the keyboard/project
+An ergonomic keyboard inspired by the legendary LZ Ergo. 
+I could never find one for sale nor would I have been able to afford it if I did find one.
+So I decided to design and build my own made of acrylic layers and a copper plate.
 
-* Keyboard Maintainer: [Anthony Garza](https://github.com/yourusername)
-* Hardware Supported: The PCBs, controllers supported
+
+* Keyboard Maintainer: [Anthony Garza](https://github.com/anthonyagarza)
+* Hardware Supported: Build with 1 Postage Board pcb and 97 Ameobas 
 * Hardware Availability: Links to where you can find this hardware
 
 Make example for this keyboard (after setting up your build environment):

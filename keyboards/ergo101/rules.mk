@@ -44,4 +44,4 @@ ENCODER_ENABLE = yes        # Enable rotary encoder support
 TERMINAL_ENABLE = no
 LEADER_ENABLE = no
 KEY_LOCK_ENABLE = no
-LINK_TIME_OPTIMIZATION_ENABLE = yes
+

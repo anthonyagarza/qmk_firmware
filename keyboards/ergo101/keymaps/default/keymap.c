@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LGUI, KC_LALT,  KC_LGUI,  KC_BSPC,          KC_SPC,           KC_LEFT, KC_DOWN, KC_UP, KC_RGHT,             KC_P0, KC_P0, KC_PDOT
     ),
     [_FN] = LAYOUT(
-        RESET,  QWERTY, COLEMAK, __, __, __,     __, __, __, __, __,  __, __,            __, __, __, LOCK,
+        RESET,  QWERTY, COLEMAK, __, __, __,     __, __, __, __, __,  __, __,            __, __, LOCK, LOCK,
         __,  __,  __,  __,  __,  __,  __,      __,  __,  __,  __,  __, __, __, __,     __, __, __, __,
         __,  __,  __,  __,  __,  __,             __,  __,  __,  __,  __, __, __, __,   __, __, __, __,
         __, __,  __,  __,  __,  __,             __,  __,  __,  __,  __,    __, __,     __, __, __,
