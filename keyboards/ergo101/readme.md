@@ -1,6 +1,6 @@
 # ergo101
 
-![ergo101](https://imgur.com/oDviLc9)
+![ergo101](https://i.imgur.com/oDviLc9.jpg)
 
 An ergonomic keyboard inspired by the legendary LZ Ergo. 
 I could never find one for sale nor would I have been able to afford it if I did find one.
